@@ -10,14 +10,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-      
-        //I can also add a note.
-        System.out.println("Adam Branch");
-
-        System.out.println("I am on the adam branch...");
-        System.out.println("Pushing to Stage");
-
-        System.out.println("Stage practicing again");
 
         System.out.println("Employee: " + employee);
         System.out.println("Employee1: " + employee1);
