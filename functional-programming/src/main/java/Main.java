@@ -1,8 +1,11 @@
 import model.Employee;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
 //    private static final Employee employee = new Employee(1, "Adam Ingram", 100);
@@ -79,6 +82,25 @@ public class Main {
 //                .collect(Collectors.toList());
 //
 //        System.out.print(memNamesInUppercase);
+
+        //Map
+//        System.out.println(Stream.of(arrayOfEmployees).map((e) -> e.getId()).toList());
+//        System.out.println(Stream.of(arrayOfEmployees).map(Employee::getName).toList());
+//
+//        List<String> myList = new ArrayList<>();
+//        myList.add("Adam");
+//        myList.add("Ingram");
+//        myList.add("Lindsay");
+//        myList.add("Ingram");
+//        System.out.println(myList);
+
+        //Filter Drops the false and keeps the true
+        System.out.println(Stream.of(arrayOfEmployees).filter((employee -> employee.getName().equals("Jacob Goodson"))).toList());
+
+        //Reduce
+        //Reverse String with reduce
+        String temp = "hello";
+        System.out.println(Stream.of(temp.split("")).reduce((acc, next) -> next + acc).get());
 
     }
 
