@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -83,19 +84,23 @@ public class Main {
 //        System.out.print(memNamesInUppercase);
 
         //Map
-        System.out.println(Stream.of(arrayOfEmployees).map((e) -> e.getId()).toList());
-        System.out.println(Stream.of(arrayOfEmployees).map(Employee::getName).toList());
+//        System.out.println(Stream.of(arrayOfEmployees).map((e) -> e.getId()).toList());
+//        System.out.println(Stream.of(arrayOfEmployees).map(Employee::getName).toList());
+//
+//        List<String> myList = new ArrayList<>();
+//        myList.add("Adam");
+//        myList.add("Ingram");
+//        myList.add("Lindsay");
+//        myList.add("Ingram");
+//        System.out.println(myList);
 
-        List<String> myList = new ArrayList<>();
-        myList.add("Adam");
-        myList.add("Ingram");
-        myList.add("Lindsay");
-        myList.add("Ingram");
-        System.out.println(myList);
-
-        //Filter
+        //Filter Drops the false and keeps the true
+        System.out.println(Stream.of(arrayOfEmployees).filter((employee -> employee.getName().equals("Jacob Goodson"))).toList());
 
         //Reduce
+        //Reverse String with reduce
+        String temp = "hello";
+        System.out.println(Stream.of(temp.split("")).reduce((acc, next) -> next + acc).get());
 
     }
 
