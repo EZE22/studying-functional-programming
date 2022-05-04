@@ -28,8 +28,26 @@ public class Main {
         return "Hello World " + userInput;
     }
 
+    //Recursion Factorial
+    public static int factorialRecursive(int num) {
+        //Always have a base case....
+        if(num <= 1) {
+            return 1;
+        }
+        return num * factorialRecursive(num -1);
+    }
+
+    public static int factorialIterative(int num) {
+        int res = 1;
+        for (int i = 2; i <= num; i++)
+            res *= i;
+        return res;
+    }
+
     public static void main(String[] args) {
         System.out.println(greeting());
+        System.out.println(factorialRecursive(2));
+        System.out.println(factorialIterative(2));
 
 
 
@@ -95,12 +113,12 @@ public class Main {
 //        System.out.println(myList);
 
         //Filter Drops the false and keeps the true
-        System.out.println(Stream.of(arrayOfEmployees).filter((employee -> employee.getName().equals("Jacob Goodson"))).toList());
+//        System.out.println(Stream.of(arrayOfEmployees).filter((employee -> employee.getName().equals("Jacob Goodson"))).toList());
 
         //Reduce
         //Reverse String with reduce
-        String temp = "hello";
-        System.out.println(Stream.of(temp.split("")).reduce((acc, next) -> next + acc).get());
+//        String temp = "hello";
+//        System.out.println(Stream.of(temp.split("")).reduce((acc, next) -> next + acc).get());
 
     }
 
